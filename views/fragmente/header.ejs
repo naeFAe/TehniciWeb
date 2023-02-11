@@ -1,0 +1,141 @@
+<header>
+    <banner>
+        Acesta este un proiect scolar!! 
+    </banner>
+    <section class="section1">
+      <div id="container">
+        <div id="text">
+          Movie Index
+          <div id="noprint"> 
+          <div id="umbra">Movie Index</div>
+        </div>
+      </div>
+      <br />
+    </section>
+  
+    <div>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+     <!-- selectare aspect pagina -->
+      <label
+        ><!-- dark mode -->
+        <img src="resources/svg/luna.svg" title="dark mode" alt="dark mode" />
+        <input id="i_rad1" name="temar" value="dark" type="radio" style="display:none" />
+      </label>
+      <label>
+        <!-- light mode -->
+        <img src="resources/svg/soare.svg" title="light mode" alt="light mode" />
+        <input id="i_rad2" name="temar" value="light" type="radio" style="display:none"/>
+      </label>
+      <label>
+        <!-- grey mode -->
+        <img
+          src="resources/svg/tongri.svg"
+          alt="grey tones mode"
+          title="grey tones mode"
+        />
+        <input id="i_rad3" name="temar" value="grey" type="radio" style="display:none" />
+      </label>
+      
+    </div>
+  
+    <pbuton>
+      <button id="btnT">Schimba tema</button>
+    </pbuton>
+  
+    <p id="output"></p>
+  
+    <script>
+      // preiau starea curenta din localstorage in tema_curenta
+      tema_curenta = localStorage.getItem("tema");
+      if (tema_curenta) document.body.classList.add(tema_curenta);
+      // tema este dark, light sau grey conform butoanelor radio de mai sus
+      const btnT = document.querySelector("#btnT");
+      const butoane = document.querySelectorAll('input[name="temar"]');
+      btnT.addEventListener("click", () => {
+        let tema;
+        for (const buton of butoane) {
+          if (buton.checked) {
+            tema = buton.value;
+            break;
+          }
+        }
+        // show the output:
+  
+        //teme:  "dark", "light", "grey"
+        // output.innerText = tema ? `Tema aleasa: ${tema}` : `Nu ai selectat nicio tema!!`;
+        // daca tema aleasa este diferita de cea curenta o sterg pe cea veche din localstorage si o adaug pe cea nou selectata
+        // fara location.reload() nu face refresh la tema
+        if (tema != tema_curenta) {
+          document.body.classList.remove(tema_curenta);
+          localStorage.removeItem("tema");
+        }
+        location.reload();
+  
+        if (tema === "dark") {
+          document.body.classList.add("dark");
+          localStorage.setItem("tema", "dark");
+        }
+  
+        if (tema === "light") {
+          document.body.classList.add("light");
+          localStorage.setItem("tema", "light");
+        }
+  
+        if (tema === "grey") {
+          document.body.classList.add("grey");
+          localStorage.setItem("tema", "grey");
+        }
+      });
+    </script>
+  
+    <nav>
+      <label id="hamburger" for="ch-menu">
+        <img src="resources/img/Hamburger_icon_alb.png" alt="menu" />
+      </label>
+      <input id="ch-menu" type="checkbox" />
+      <ul class="meniu">
+        <li>
+          <div>Filme</div>
+          <ul>
+            <li><a href="#">După data lansării</a></li>
+            <li><a href="#">După recenzii</a></li>
+            <li><a href="#">După box office</a></li>
+            <li><a href="#">Cumpara bilete</a></li>
+            <li><a href="despre">Despre</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="seriale">Seriale</div>
+          <ul>
+            <li><a href="#">Lansate recent</a></li>
+            <li><a href="#">Populare acum</a></li>
+            <li><a href="#">Seriale premiate</a></li>
+            <li><a href="#">Seriale apreciate de critici</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="premii">Premii şi evenimente</div>
+          <ul>
+            <li><a href="#">Oscaruri</a></li>
+            <li><a href="#">Câştigătorii pentru cea mai bună imagine</a></li>
+            <li><a href="#">Premiile Emmy</a></li>
+            <li><a href="#">Comic-con</a></li>
+          </ul>
+          <li><div>Produse</div>
+            <ul>
+                <li><a href="/produse">Toate</a></li>
+                <li><a href="#">Filme</a></li>
+                <li><a href="#">Seriale</a></li>
+                <li><a href="#">Seriale</a></li>
+            </ul>
+        </li>
+        </li>
+      </ul>
+    </nav>
+  
+  
+  </header>
+  

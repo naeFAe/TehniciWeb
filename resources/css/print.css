@@ -1,0 +1,84 @@
+nav, form, iframe, .menu, .pbuton, button, input, figcaption, .paranteza, .to-top {
+    display: none !important;
+  }
+
+  @page :left {
+    margin-top: 2.5cm;
+    margin-bottom: 2.5cm;
+    margin-right: 0.5cm;
+    margin-left: 2.5cm;
+    }
+  
+  @page :right {
+      margin-top: 2.5cm;
+      margin-bottom: 2.5cm;
+      margin-right: 2.5cm;
+      margin-left: 0.5cm;
+    }
+
+  * {
+    background-image: none !important;
+  }
+  
+  img, svg {
+    display: none !important;
+  }
+  
+  img { 
+    display: none;
+   } 
+a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-style: normal;
+}
+   header{
+        display: table-cell;
+        font-size: 2.5rem;  
+        color: rgb(0, 0, 0);  
+        text-decoration: underline;
+        page-break-after: always;
+        width: 1920px;
+        position: relative;
+        vertical-align: middle;
+        text-align: center;
+   
+    }
+
+  banner{
+    width: 80%;
+    display: table-cell;
+        width: 1536px;
+        
+    font-size: 1rem;
+    border: 1px dashed #000000;
+    text-align: center;
+    padding: 3%;
+    text-decoration: none;
+  }
+
+@media print {
+  footer {page-break-before: always;}
+  #umbra{    
+  visibility: hidden;
+      }
+  .pbuton{
+    visibility: hidden;
+  }
+}
+
+/** watermark pe fiecare pagina - textul index.ejs la sfarsit **/
+#watermark {
+  bottom: 0;
+  right: 0;
+  font-size: 1rem;
+  border: double #000000;
+  width: 100px;
+  height: 2cm;
+  opacity: 0.65;
+  visibility:visible;
+  text-align: center;
+  display: block;
+  position: fixed;
+}
+

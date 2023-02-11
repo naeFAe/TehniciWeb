@@ -1,0 +1,119 @@
+:root{
+    --body-bg: #A5DEF2;
+    --body-color: rgb(0, 0, 0);
+    --header-bg:#A5DEF2;
+    --header-color:rgb(0, 0, 0);
+    --footer-bg: #A5DEF2;
+    --footer-color:rgb(0, 0, 0);
+ }
+.light{
+    --body-bg: #f8f8f8;
+    --body-color: rgb(0, 0, 0);
+    --header-bg:#f7f7f7;
+    --header-color:rgb(0, 0, 0);
+    --footer-bg: #f4f7f8;
+    --footer-color:rgb(0, 0, 0);   
+}
+
+.dark{
+    --body-bg: #0b023a;
+    --body-color: rgb(203, 207, 233);
+    --header-bg:#0b023a;;
+    --header-color:rgb(203, 207, 233);
+    --footer-bg: #0b023a;;
+    --footer-color:rgb(203, 207, 233);   
+}
+
+.grey{
+    --body-bg: #5d5c5f;
+    --body-color: rgb(0, 0, 0);
+    --header-bg:#5d5c5f;;
+    --header-color:rgb(0, 0, 0);
+    --footer-bg: #5d5c5f;;
+    --footer-color:rgb(0, 0, 0);  
+}  
+.grey.img{  
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+}
+
+
+
+header{
+    /*    background-color: #A5DEF2; */
+        background-color: var(--header-bg);
+        color:var(--header-color);
+        padding-left:10px;
+    
+
+    }
+main{
+        background-color: var(--body-bg);
+        color:var(--body-color);
+    }
+footer{
+        background-color:var(--footer-bg);
+        color:var(--footer-color);
+    }
+
+#grid-pagina{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:"z-1 z-1 z-1 z-1"
+                        "z-5 z-6 z-6 z-7"
+                        "z-3 z-3 z-2 z-2"
+                        "z-4 z-4 z-2 z-2"
+                        "z-8 z-8 z-8 z-8";
+}
+
+#grid-pagina>*{
+    border:0.5px solid black;
+}
+
+#filme-anticipate{
+    grid-area: z-1;
+    width: 100%;
+}
+#zona2{
+    grid-area: z-2;
+}
+#zona3{
+    grid-area: z-3;
+}
+#zona4{
+    grid-area: z-4;
+}
+#zona5{
+    grid-area: z-5;
+}
+#zona6{
+    grid-area: z-6;
+}
+#zona7{
+    grid-area: z-7;
+}
+#fav-fanilor{
+    grid-area: z-8;
+}
+
+@media screen and (max-width:700px) {
+    #grid-pagina{
+        display: block;
+    }
+}
+
+
+banner{
+    display:none;
+}
+
+@media print {
+    .noprint {
+       display:none;
+    }
+}
+
+#watermark {
+    display: none;
+  }
+

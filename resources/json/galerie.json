@@ -1,0 +1,34 @@
+{
+	"cale_galerie":"resources/img/galerie",
+	"imagini": [
+		{
+			"fisier":"avatar-2.jpg",
+			"descriere":"Avatar The Way of Water",
+			"luni":["martie","februarie","noiembrie"]
+		},
+		{
+			"fisier":"call_jane.jpg",
+			"descriere":"Call Jane",
+			"luni":["ianuarie","februarie","noiembrie"]
+			
+		},
+		{
+			"fisier":"cinderella.jpg",
+			"descriere":"Two Wishes for Cinderella",
+			"luni":["ianuarie","februarie","iunie","noiembrie"]
+		},
+		{
+			"fisier":"i_wanna_dance.jpg",
+			"descriere":"I wanna dance",
+			"luni":["noiembrie"]
+		},
+		{
+			"fisier":"lamborghini.jpg",
+			"descriere":"Lamborghini"
+		},
+		{
+			"fisier":"toriylokita.jpg",
+			"descriere":"Tory and lokita"
+		}
+	]
+}

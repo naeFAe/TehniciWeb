@@ -1,0 +1,430 @@
+body{
+    --inaltime-meniu:25px;
+    --latime-buton:416px;
+    --culoare-meniu:#0E28E8;
+    --culoare-meniu-selectat:#1C82FF;
+    --background-color:#07FFE3;
+    --culoare4:#1C82FF;
+    --culoare5:#430FFF;
+    --latime-bord-meniu:1px;
+}
+
+ul.meniu{
+    display:flex;/*pune div:filme.. toate pe prima linie/fiecare pe cate o coloana in loc sa le puna pe fiecare pe cate o linie*/
+    padding: 0;
+    margin: 0;
+    list-style-type:none;/*dispar bullet urile */
+    z-index: 10;/*muta pe axa Oz adica in 3d spre mine*/
+    position: relative;/*nu merge sa mut submeniul daca am position static(default)*/
+}
+
+ul.meniu li a{
+    display:block;
+    height:100%;
+}
+
+ul.meniu>li{
+    height: var(--inaltime-meniu);
+    overflow:hidden;/*imi ascunde li-urile din meniu pana sa fac hover*/
+    line-height: var(--inaltime-meniu);
+    vertical-align: middle;
+    border:var(--latime-bord-meniu) solid black;
+    width:var(--latime-buton);
+    text-align: center;
+}
+ul.meniu div{
+    color:var(--culoare4);
+}
+ul.meniu div{
+
+  text-shadow: 
+    0 -1.3em ;
+  overflow: hidden;
+  transition: 0.7s;
+}
+ul.meniu>li:hover div{
+    text-shadow: 
+    0 0 var(--culoare4);/*#1095c1*/
+}
+ul.meniu ul{
+    list-style-type: none;
+    z-index: 10px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+}
+
+ul.meniu>li:hover ul{
+    animation-name: animatie_submeniu;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;/*coboara meniul*/
+}
+ul.meniu ul li{
+    height: var(--inaltime-meniu);
+   
+    border:var(--latime-bord-meniu) solid black;
+    width: var(--latime-buton);
+}
+
+ul.meniu li a:hover, ul.meniu li div:hover{
+    background-color: var(--culoare-meniu-selectat);
+}
+ul.meniu>li:hover{
+    overflow: visible;
+}
+@keyframes animatie_submeniu{
+    100%{
+        transform: scaleY(1);
+    }
+}
+@keyframes animatie_umbra{
+    100%{
+        transform: text-shadow scaleY(1);
+    }
+}
+ul.meniu a,ul.meniu div{
+    background-color: var(--culoare-meniu);
+    cursor: pointer;
+    font-weight: bold;
+    color:#A5DEF2;
+    text-decoration: none;/*scoate underline*/
+}
+
+nav{
+    height:var(--inaltime-meniu);
+    background-color: var(--culoare-meniu);
+    overflow:visible;
+    position: relative;
+    width: 1248px;
+}
+#hamburger, #ch-menu{
+    display: none;
+}
+
+.to-top{
+	color:white;
+	padding-top:1.8em;
+	display:inline-block;/* or block */
+	position:relative;
+	border-color:white;
+	text-decoration:none;
+	transition:all .3s ease-out;
+    opacity: 20%;
+}
+.to-top:before{
+    color:var(--culoare5);
+	content:'▲';
+	font-size:.9em;
+	position:absolute;
+	top:43px;
+	left:40%;
+	transition:transform .5s ease-in;
+}
+.hide{
+    border-style: solid;/*ca sa ii pun cadran*/
+    width: 65px;
+    margin-left: 25px;/*ca sa il mut mai la drepta*/
+}
+.to-top:hover +.hide{
+    display: block;
+    opacity: 100%;
+	color:var(--culoare5);
+    
+}
+.to-top:hover{
+    opacity: 100%;
+}
+.to-top:hover:before{
+    
+    opacity: 100%;
+	transform: translateY(-10px);
+}
+.parent {
+    padding: 2rem 2rem;
+    
+  }
+
+.paranteza {
+    color: #1E80C1;
+    opacity: 70%;
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  table {
+    margin: auto;/*pentru a creea marginile tabelului*/
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+    /*-moz-border-radius:6px;face marginile rotunde este o prop*/
+}
+
+/*td, th {chenarele mici din interirul tabelului
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}*/
+
+/*th {
+    background-color: blue;
+    border-top: none;
+}*/
+
+/*td:first-child, th:first-child {
+     border-left: none;
+}*/
+
+  .par{
+    background-color: white;
+  }
+  .impar{
+    background-color: #5BAEB7;
+  }
+
+table td:hover{
+    background-color: #1E80C1;
+}
+table tr:hover td{
+    background-color: bisque;
+}
+/*div.taburi-iframe a{
+    background-color: #4CAF50; /* Green */
+    /*border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  margin-top: -5px;
+}
+
+div.taburi-iframe a:hover {
+    background-color: #008CBA;
+  color: white;
+}*/
+.flexbox {/*le pune in stanga iframului altfel le pune deasupra, pune pe aceasi linie iframul cu ylinkurile*/
+    display:flex; 
+}
+
+.rectangle_link{
+    height: 50px;
+    width: 100px;
+    background-color: var(--culoare-meniu); 
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+}
+.ylink{
+    color:#A5DEF2 ;
+    text-decoration: none;
+}
+.rectangle_link:hover {/*boxul in care se afla iframul*/
+    transition: all 1s linear;
+    background-color: var(--culoare-meniu-selectat);
+}
+
+.ylink:hover {
+    transition: all 1s linear;
+    color: var(--y-link-hover-color);
+}
+
+.ylink {
+    color: var(--ylink-color);
+}
+.hr1{
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    border-top: double;
+
+}
+.hr1::before{
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width:  0 0 1px 0;
+    border-bottom:double;
+    border-radius: 20px;
+}
+
+
+/*.column:hover{
+	position:relative;
+	background-size:cover;
+	
+	filter:brightness(200%) grayscale(0) ;
+	transition:all 2s linear;
+}
+
+.column:after, column:before{
+	content:" ";
+	position:absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	
+	transition:all 2s linear;
+}
+
+.column:after{
+	background-color:rgb(0,0,255);
+	mix-blend-mode:lighten;
+}
+
+#imagine:before{
+	background-color:rgb(205,0,255);
+	mix-blend-mode:darken;
+}
+*/
+/* pentru ca efectul de unduire sa apara in momentul in care cursorul atinge textul/umbra
+            am grupat textul si umbra in section1 */
+            .section1{
+                font-size:50px;
+                line-height:50px;
+                font-weight: bold;
+            }
+            
+            #text{	
+                position:relative;
+            }
+            
+            #umbra{
+                position:absolute;
+                left:0;
+                top:100%;
+                transform-origin:0 0;
+                /*text inversat rotit ai translatat ca sa para o umbra a textului original*/
+                transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(10px,-25px); 
+                opacity:0.55;
+                /*repeating-radial-gradient creeaza cercuri concentrice din origine dar raman fixe*/
+                 /*pentru animatie: am ales shape elipsa pozitia 0% 0% start-color black transparent si
+                  last-color 20%, iar apoi am aplicat 6 masti black unde am variat saturatia culorii black
+                  acestea dand iluzia miscarii de unduire      */
+                  --imagine-masca:repeating-radial-gradient(ellipse farthest-side at 0% 0%, black, transparent,black 20%);
+                  --masca1:repeating-radial-gradient(farthest-side at 0% 10%, black, transparent,black 20%);
+                  --masca2:repeating-radial-gradient(farthest-side at 0% 20%, black, transparent,black 20%);
+                  --masca3:repeating-radial-gradient(farthest-side at 0% 25%, black, transparent,black 20%);
+                  --masca4:repeating-radial-gradient(farthest-side at 0% 20%, black, transparent,black 20%);
+                  --masca6:repeating-radial-gradient(farthest-corner at 20% 20%, black, transparent,black 20%);
+                mask-image: var(--imagine-masca);
+                -webkit-mask-image:var(--imagine-masca) ; 
+              
+            }
+            /* efectul de unde concentrice pe apa am folosit @keyframes pentru succesiunea mastilor animatiei*/
+            @keyframes unduire {
+                100%{
+                    mask-image: var(--masca1);
+                    -webkit-mask-image:var(--masca1) ;
+                    mask-image: var(--masca2);
+                    -webkit-mask-image:var(--masca2) ;
+                    mask-image: var(--masca3);
+                    -webkit-mask-image:var(--masca3) ;
+                    mask-image: var(--masca4);
+                    -webkit-mask-image:var(--masca4) ;
+                    mask-image: var(--masca5);
+                    -webkit-mask-image:var(--masca5) ;
+                    mask-image: var(--masca6);
+                    -webkit-mask-image:var(--masca6) ;
+            
+                    -webkit-mask-position: left;
+                    mask-position: left;
+             
+                }
+            }
+               
+            #umbra:hover{
+                    position: absolute;
+                    animation: unduire 0.5s infinite alternate;
+            
+            }
+            
+* {
+    box-sizing: border-box;
+    }
+    
+.column {
+    float: left;
+    width: 16.66%;
+    
+}
+    
+    /* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    position: relative;
+    width: 16.6%;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0%;
+    left: 100%;
+    right: 0;
+    background-color:rgb(0,0,255);
+    mix-blend-mode:lighten;
+    overflow: hidden;
+    width: 0%;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .column:hover .overlay {
+    width: 100%;
+    left: 0;
+  }
+  .column:hover .overlay2{
+    width: 100%;
+  }
+  .text {
+    position: absolute;
+    height:100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+  .overlay2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgb(205,0,255);
+	mix-blend-mode:darken;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }

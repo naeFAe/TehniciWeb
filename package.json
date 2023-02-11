@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "node-sass": "^8.0.0",
+    "perm": "^1.0.0",
+    "pg": "^8.9.0",
+    "sharp": "^0.31.3"
+  },
+  "name": "movie-index",
+  "version": "1.0.0",
+  "description": "site filme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "npm init"
+  },
+  "author": "Stefan Nae",
+  "license": "ISC"
+}
